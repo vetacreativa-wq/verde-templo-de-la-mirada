@@ -3,14 +3,14 @@ Bienvenido al repositorio personal de **José Antonio de la Vega Torres**, escri
 *(Espacio en construcción)*
 
 ## Contenido actual
-- [Teoría literaria](./Teoría literaria.md) *(subido recientemente)*
+- [Teoría literaria](./Teoría%20literaria.md) *(subido recientemente)*
 
 ## Próximamente
 - **Ensayos y artículos académicos y de opinión**
 - **Ligas a blogs**
 - **Ficción** *(mediante el sitio hermano **Bajo el Cielo de Mayo**)*
 
-**[Suscribirse a actualizaciiones] (#)** | [Verde Templo de la Mirada] (https://verdetemplodelamirada.blogspot.com)
+**[Suscribirse a actualizaciiones] (#)** | [Verde Templo de la Mirada](https://verdetemplodelamirada.blogspot.com)
 
 ---
 ==*Construyendo con amor literario.
