@@ -1,5 +1,5 @@
-# verde-templo-de-la-mirada
-Repositorio personal de **José Antonio de la Vega Torres**, escritor y comunicólogo mexicano
+# Verde Templo de la Mirada
+Bienvenido al repositorio personal de **José Antonio de la Vega Torres**, escritor y comunicólogo mexicano
 *(Espacio en construcción)*
 
 ## Contenido actual
