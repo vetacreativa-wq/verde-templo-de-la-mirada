@@ -14,15 +14,16 @@
             --blanco-calido: #fdfaf5;
         }
 
-        body {
+body {
             background-color: var(--verde-profundo);
-            /* Gradiente radial para crear un punto de luz central y reducir fatiga visual */
+            /* Corregido: gradiente radial con sintaxis estándar y ruta de imagen */
             background-image: 
-                radial-gradient(circleAtCenter, rgba(20, 54, 45, 0.4) 0%, rgba(5, 18, 15, 0.95) 85%), 
+                radial-gradient(circle, rgba(20, 54, 45, 0.4) 0%, rgba(5, 12, 11, 0.95) 85%), 
                 url('VerdeTemploMirada.png'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-repeat: no-repeat;
             color: var(--blanco-calido);
             font-family: 'Lora', serif;
             margin: 0;
