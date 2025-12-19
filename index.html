@@ -13,84 +13,40 @@
             --crema: #f4f1ea;
         }
 
-        body {
-            background-color: var(--verde-profundo);
-            /* Aquí cargamos tu imagen desde el repo con un degradado que la oscurece */
-            background-image: 
-                linear-gradient(rgba(5, 18, 15, 0.85), rgba(5, 18, 15, 0.85)), 
-                url('VerdeTemploMirada.png'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--crema);
-            font-family: 'Lora', serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-        }
+body {
+    background-color: #030a08; /* Negro profundo casi puro para que el verde resalte */
+    background-image: 
+        radial-gradient(circle, rgba(20, 54, 45, 0.4) 0%, rgba(5, 18, 15, 0.9) 80%), 
+        url('VerdeTemploMirada.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fdfaf5; /* Un blanco más cálido y luminoso que el crema anterior */
+}
 
-        header {
-            padding: 40px 20px;
-            z-index: 2;
-        }
+h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--oro);
+    text-shadow: 0 0 15px rgba(197, 160, 89, 0.4); /* Resplandor sutil */
+    letter-spacing: 5px;
+}
 
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            color: var(--oro);
-            margin-bottom: 15px;
-            letter-spacing: 4px;
-            text-shadow: 0px 0px 15px rgba(0,0,0,0.8);
-        }
+.subtitulo {
+    font-weight: 500; /* Un poco más de cuerpo a la letra */
+    line-height: 2; /* Más aire entre líneas */
+    border-color: rgba(197, 160, 89, 0.5); /* Líneas más suaves */
+}
 
-        .subtitulo {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--crema);
-            border-top: 1px solid var(--oro);
-            border-bottom: 1px solid var(--oro);
-            padding: 20px 0;
-            max-width: 750px;
-            margin: 0 auto;
-            letter-spacing: 1px;
-        }
+.sendero {
+    background: rgba(10, 31, 26, 0.6); /* Fondo más sólido para que el texto resalte mejor */
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
 
-        .senderos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            width: 90%;
-            max-width: 1100px;
-            margin-top: 40px;
-            z-index: 2;
-        }
-
-        .sendero {
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            text-decoration: none;
-            color: var(--oro);
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .sendero:hover {
-            background: rgba(20, 54, 45, 0.6);
-            border-color: var(--oro);
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(197, 160, 89, 0.3);
-        }
-
+.sendero:hover {
+    background: rgba(30, 77, 64, 0.8);
+    box-shadow: 0 0 30px rgba(197, 160, 89, 0.2); /* Luz que emana del cuadro */
+}
         .badge {
             font-size: 0.7rem;
             color: var(--crema);
