@@ -7,14 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --verde-profundo: #0a1f1a;
-            --verde-acento: #1e4d40;
+            --verde-profundo: #05120f;
+            --verde-acento: #14362d;
             --oro: #c5a059;
             --crema: #f4f1ea;
         }
 
         body {
             background-color: var(--verde-profundo);
+            /* Aquí cargamos tu imagen desde el repo con un degradado que la oscurece */
+            background-image: 
+                linear-gradient(rgba(5, 18, 15, 0.85), rgba(5, 18, 15, 0.85)), 
+                url('VerdeTemploMirada.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--crema);
             font-family: 'Lora', serif;
             margin: 0;
@@ -24,122 +31,131 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            overflow-x: hidden;
         }
 
         header {
             padding: 40px 20px;
-            border-bottom: 1px solid var(--oro);
-            margin-bottom: 30px;
-            width: 80%;
-            max-width: 800px;
+            z-index: 2;
         }
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             color: var(--oro);
-            margin-bottom: 10px;
-            letter-spacing: 3px;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+            text-shadow: 0px 0px 15px rgba(0,0,0,0.8);
         }
 
         .subtitulo {
-            font-style: italic;
             font-size: 1.1rem;
-            color: var(--crema);
-            opacity: 0.9;
-        }
-
-        .manifiesto {
-            max-width: 650px;
-            margin: 20px auto;
             line-height: 1.6;
-            font-size: 1.2rem;
+            color: var(--crema);
+            border-top: 1px solid var(--oro);
+            border-bottom: 1px solid var(--oro);
+            padding: 20px 0;
+            max-width: 750px;
+            margin: 0 auto;
+            letter-spacing: 1px;
         }
 
         .senderos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             width: 90%;
-            max-width: 1000px;
+            max-width: 1100px;
             margin-top: 40px;
+            z-index: 2;
         }
 
         .sendero {
-            padding: 30px;
-            border: 1px solid var(--verde-acento);
-            background: rgba(30, 77, 64, 0.1);
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(197, 160, 89, 0.2);
             text-decoration: none;
             color: var(--oro);
             font-family: 'Cinzel', serif;
+            font-weight: bold;
             transition: all 0.4s ease;
-            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .sendero:hover {
-            background: var(--verde-acento);
-            color: var(--crema);
+            background: rgba(20, 54, 45, 0.6);
             border-color: var(--oro);
-            transform: translateY(-5px);
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(197, 160, 89, 0.3);
         }
 
-        .alter-ego {
+        .badge {
+            font-size: 0.7rem;
+            color: var(--crema);
+            margin-top: 10px;
+            opacity: 0.8;
+            font-family: 'Lora', serif;
+            font-weight: normal;
+        }
+
+        footer {
             margin-top: 60px;
             padding: 20px;
             font-size: 0.9rem;
-            border-top: 1px dashed var(--oro);
-            width: 60%;
+            z-index: 2;
         }
 
-        .alter-ego a {
+        footer a {
             color: var(--oro);
             text-decoration: none;
-            font-weight: bold;
+            font-style: italic;
         }
 
-        .alter-ego a:hover {
-            text-decoration: underline;
+        /* Animación suave al cargar */
+        body {
+            animation: fadeInPage 2.5s ease;
         }
 
-        /* Animación de entrada */
-        .fade-in {
-            animation: fadeIn 2s ease-in;
-        }
-
-        @keyframes fadeIn {
+        @keyframes fadeInPage {
             from { opacity: 0; }
             to { opacity: 1; }
         }
     </style>
 </head>
-<body class="fade-in">
+<body>
 
-<header>
-    <h1>Verde Templo de la Mirada</h1>
-    <p class="subtitulo">Exploraciones sobre la actitud estética:</p>
-    <p Del signo a la palabra, hacia el nacimiento del Universo Calima.</p>
-</header>
-
-<a href="#calima" class="sendero">
-    El Universo Calima
-    <span style="display:block; font-size:0.7rem; color:var(--crema); margin-top:5px; opacity:0.7;">(Próximamente: Una saga épica en Amazon)</span>
-</a>
-
-    <div class="manifiesto">
-        <p>"Detrás de cada palabra hay una mirada que busca descifrar el mundo. Aquí conviven el análisis del comunicólogo, el rastro de la historia y el nacimiento de un universo llamado Calima."</p>
-    </div>
+    <header>
+        <h1>Verde Templo de la Mirada</h1>
+        <div class="subtitulo">
+            Exploraciones sobre la Actitud Estética:<br>
+            Del signo a la palabra, hacia el nacimiento del Universo Calima
+        </div>
+    </header>
 
     <nav class="senderos">
-        <a href="#analitica" class="sendero">La Palabra Analítica</a>
-        <a href="#archivo" class="sendero">El Archivo de los Signos</a>
-        <a href="#calima" class="sendero">El Horizonte de Calima</a>
-        <a href="#virtual" class="sendero">Espejismos Virtuales</a>
+        <a href="#analitica" class="sendero">
+            La Palabra Analítica
+            <span class="badge">Ensayos y Estética</span>
+        </a>
+        <a href="#archivo" class="sendero">
+            El Archivo de los Signos
+            <span class="badge">Historia y Genealogía</span>
+        </a>
+        <a href="#calima" class="sendero">
+            El Universo Calima
+            <span class="badge">Saga Épica (Próximamente)</span>
+        </a>
+        <a href="#virtual" class="sendero">
+            Espejismos Virtuales
+            <span class="badge">Metamundos e IA</span>
+        </a>
     </nav>
 
-    <footer class="alter-ego">
-        <p>Cuando la mirada se agota, las palabras las dicta mi otro yo: 
-           <a href="URL_DE_TU_PAGINA_AVATAR">Beggar Mayo Slaegon</a>
+    <footer>
+        <p>Bajo la bruma de otras realidades habita 
+           <a href="#">Beggar Mayo Slaegon</a>
         </p>
     </footer>
 
