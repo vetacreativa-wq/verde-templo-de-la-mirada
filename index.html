@@ -4,85 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verde Templo de la Mirada | José Antonio de la Vega</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --verde-profundo: #05120f;
             --verde-acento: #14362d;
             --oro: #c5a059;
-            --crema: #f4f1ea;
+            --oro-brillante: #e4c68d;
+            --blanco-calido: #fdfaf5;
         }
 
-body {
-    background-color: #030a08; /* Negro profundo casi puro para que el verde resalte */
-    background-image: 
-        radial-gradient(circle, rgba(20, 54, 45, 0.4) 0%, rgba(5, 18, 15, 0.9) 80%), 
-        url('VerdeTemploMirada.png'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #fdfaf5; /* Un blanco más cálido y luminoso que el crema anterior */
-}
+        body {
+            background-color: var(--verde-profundo);
+            /* Gradiente radial para crear un punto de luz central y reducir fatiga visual */
+            background-image: 
+                radial-gradient(circleAtCenter, rgba(20, 54, 45, 0.4) 0%, rgba(5, 18, 15, 0.95) 85%), 
+                url('VerdeTemploMirada.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--blanco-calido);
+            font-family: 'Lora', serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-h1 {
-    font-family: 'Cinzel', serif;
-    color: var(--oro);
-    text-shadow: 0 0 15px rgba(197, 160, 89, 0.4); /* Resplandor sutil */
-    letter-spacing: 5px;
-}
+        header {
+            padding: 20px;
+            z-index: 10;
+            max-width: 900px;
+        }
 
-.subtitulo {
-    font-weight: 500; /* Un poco más de cuerpo a la letra */
-    line-height: 2; /* Más aire entre líneas */
-    border-color: rgba(197, 160, 89, 0.5); /* Líneas más suaves */
-}
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            color: var(--oro);
+            margin-bottom: 20px;
+            letter-spacing: 6px;
+            text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+        }
 
-.sendero {
-    background: rgba(10, 31, 26, 0.6); /* Fondo más sólido para que el texto resalte mejor */
-    border: 1px solid rgba(197, 160, 89, 0.4);
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-}
+        .subtitulo {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 500;
+            color: var(--blanco-calido);
+            border-top: 1px solid rgba(197, 160, 89, 0.5);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.5);
+            padding: 20px 40px;
+            margin: 0 auto 30px auto;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
 
-.sendero:hover {
-    background: rgba(30, 77, 64, 0.8);
-    box-shadow: 0 0 30px rgba(197, 160, 89, 0.2); /* Luz que emana del cuadro */
-}
+        .senderos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            width: 90%;
+            max-width: 1150px;
+            z-index: 10;
+        }
+
+        .sendero {
+            padding: 45px 25px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            text-decoration: none;
+            color: var(--oro);
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sendero:hover {
+            background: rgba(30, 77, 64, 0.75);
+            border-color: var(--oro-brillante);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(197, 160, 89, 0.2);
+            color: var(--oro-brillante);
+        }
+
         .badge {
-            font-size: 0.7rem;
-            color: var(--crema);
-            margin-top: 10px;
+            font-size: 0.75rem;
+            color: var(--blanco-calido);
+            margin-top: 12px;
             opacity: 0.8;
             font-family: 'Lora', serif;
-            font-weight: normal;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.5px;
         }
 
         footer {
-            margin-top: 60px;
-            padding: 20px;
+            margin-top: 80px;
+            padding: 40px 20px;
             font-size: 0.9rem;
-            z-index: 2;
+            z-index: 10;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.4));
         }
 
-        footer a {
+        .ego-link {
+            display: block;
+            margin-bottom: 20px;
             color: var(--oro);
             text-decoration: none;
             font-style: italic;
+            font-size: 1rem;
+            transition: 0.3s;
         }
 
-        /* Animación suave al cargar */
-        body {
-            animation: fadeInPage 2.5s ease;
+        .ego-link:hover {
+            color: var(--oro-brillante);
+            text-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
         }
 
-        @keyframes fadeInPage {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .copyright {
+            opacity: 0.6;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        /* Animación de entrada suave */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-element {
+            animation: fadeIn 2s ease forwards;
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <header class="fade-element">
         <h1>Verde Templo de la Mirada</h1>
         <div class="subtitulo">
             Exploraciones sobre la Actitud Estética:<br>
@@ -90,7 +161,7 @@ h1 {
         </div>
     </header>
 
-    <nav class="senderos">
+    <nav class="senderos fade-element">
         <a href="#analitica" class="sendero">
             La Palabra Analítica
             <span class="badge">Ensayos y Estética</span>
@@ -109,10 +180,9 @@ h1 {
         </a>
     </nav>
 
-    <footer>
-        <p>Bajo la bruma de otras realidades habita 
-           <a href="#">Beggar Mayo Slaegon</a>
-        </p>
+    <footer class="fade-element">
+        <a href="#" class="ego-link">Bajo la bruma de otras realidades habita Beggar Mayo Slaegon</a>
+        <p class="copyright">© 2025 José Antonio de la Vega Torres. Todos los derechos reservados.</p>
     </footer>
 
 </body>
